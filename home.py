@@ -53,19 +53,38 @@ elif page == "Health Blog":
 # Client Interface Page
 elif page == "Client Interface":
     st.title("Client Interface")
+    
+    # Search for Doctors
     st.subheader("Search for Doctors")
     search_term = st.text_input("Search for doctors based on specialty, location, or availability")
     if search_term:
         st.write(f"Searching for doctors with the term: {search_term}")
-    
+        # Here you would implement actual search logic with backend
+
+    # Book an Appointment
     st.subheader("Book an Appointment")
-    st.write("Select a doctor and book your appointment online.")
+    st.write("To book an appointment, please select a doctor and choose a time slot.")
+    doctor_name = st.selectbox("Select Doctor", ["Dr. Smith", "Dr. Johnson", "Dr. Lee"])  # Replace with dynamic list
+    appointment_date = st.date_input("Select Date")
+    appointment_time = st.time_input("Select Time")
+    if st.button("Book Appointment"):
+        st.write(f"Appointment booked with {doctor_name} on {appointment_date} at {appointment_time}.")
+        # Here you would integrate actual booking logic with backend
 
+    # Access Medical History and Prescriptions
     st.subheader("Access Medical History and Prescriptions")
-    st.write("Log in securely to view your medical history and prescriptions.")
+    st.write("Please log in to securely view your medical history and prescriptions.")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Log In"):
+        st.write("Login successful. Displaying your medical history and prescriptions.")
+        # Here you would integrate actual login and data fetching logic with backend
 
+    # Receive Notifications and Reminders
     st.subheader("Receive Notifications and Reminders")
-    st.write("Get notifications for upcoming appointments and reminders for medications.")
+    st.write("Manage your notifications and reminders for upcoming appointments and medication.")
+    st.write("To receive notifications, ensure your contact details are up-to-date in your profile.")
+    # Here you would integrate actual notification management with backend
 
 # Admin Panel Page
 elif page == "Admin Panel":
@@ -131,6 +150,3 @@ elif page == "Admin Management":
 
     st.subheader("Ensure Compliance")
     st.write("Ensure all practices are in line with medical regulations and standards.")
-
-# Add additional configurations and features as needed
-
