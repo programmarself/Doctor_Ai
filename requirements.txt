@@ -1,8 +1,5 @@
 streamlit==1.20.0
 openai==0.27.0
-# Add any other dependencies here
-
-# Example additional packages
 requests==2.28.2
 pandas==2.0.2
 python-dotenv==1.0.0
