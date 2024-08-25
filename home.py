@@ -17,7 +17,7 @@ def chatbot_response(query):
 
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Contact", "Health Blog", "Client Interface", "Admin Panel"])
+page = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Contact", "Health Blog", "Client Interface", "Admin Panel", "Chatbot", "New Doctor Profiles", "Admin Management"])
 
 # Frontend for Visitors
 if page == "Home":
@@ -83,4 +83,8 @@ if page == "Admin Management":
     st.title("Admin Management")
     st.write("Approve new doctor profiles, monitor interactions, handle disputes, and ensure compliance.")
     st.write("This section is restricted to authorized admins.")
-
+    st.write("Admin actions include:")
+    st.write("- Approving new doctor profiles")
+    st.write("- Monitoring doctor-patient interactions")
+    st.write("- Handling disputes or issues")
+    st.write("- Ensuring compliance with medical regulations")
