@@ -22,7 +22,7 @@ page = st.sidebar.radio("Go to", ["Home", "About Us", "Services", "Contact", "He
 # Frontend for Visitors
 if page == "Home":
     st.title("Welcome to HealthCare Center")
-    st.image("https://via.placeholder.com/800x400", use_column_width=True)
+    st.image("doctor ai.png)
     st.write("Providing the best healthcare services for you and your family.")
 elif page == "About Us":
     st.title("About Us")
