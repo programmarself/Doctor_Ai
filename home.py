@@ -14,81 +14,31 @@ def chatbot_response(query):
     else:
         return "I'm not sure how to help with that. Please contact a doctor for more information."
 
-# Create a Top Navigation Bar
-st.markdown("""
-    <style>
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .navbar a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        .container {
-            padding: 20px;
-        }
-    </style>
-    <div class="navbar">
-        <a class="active" href="?page=home">Home</a>
-        <a href="?page=about_us">About Us</a>
-        <a href="?page=services">Services</a>
-        <a href="?page=contact">Contact</a>
-        <a href="?page=health_blog">Health Blog</a>
-        <a href="?page=client_interface">Client Interface</a>
-        <a href="?page=admin_panel">Admin Panel</a>
-        <a href="?page=chatbot">Chatbot</a>
-        <a href="?page=new_doctor_profiles">New Doctor Profiles</a>
-        <a href="?page=admin_management">Admin Management</a>
-    </div>
-    """, unsafe_allow_html=True)
-
-# Function to handle navigation
-def get_page():
-    query_params = st.experimental_get_query_params()
-    if "page" in query_params:
-        return query_params["page"][0]
-    else:
-        return "home"
-
-# Fetch the selected page
-page = get_page()
+# Sidebar Navigation
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Go to", [
+    "Home", "About Us", "Services", "Contact", "Health Blog",
+    "Client Interface", "Admin Panel", "Chatbot", "New Doctor Profiles", "Admin Management"
+])
 
 # Home Page
-if page == "home":
+if page == "Home":
     st.title("Welcome to HealthCare Center")
     st.image("doctor ai.png")
     st.write("Providing the best healthcare services for you and your family.")
 
 # About Us Page
-elif page == "about_us":
+elif page == "About Us":
     st.title("About Us")
     st.write("We are committed to providing excellent healthcare services with a team of experienced professionals dedicated to your well-being.")
 
 # Services Page
-elif page == "services":
+elif page == "Services":
     st.title("Our Services")
     st.write("We offer a range of medical services including general consultations, specialist care, emergency services, and more.")
 
 # Contact Page
-elif page == "contact":
+elif page == "Contact":
     st.title("Contact Us")
     st.write("Get in touch with us through email, phone, or visit our office.")
     st.write("Email: contact@healthcare.com")
@@ -96,12 +46,12 @@ elif page == "contact":
     st.write("Address: 123 Health St, Wellness City")
 
 # Health Blog Page
-elif page == "health_blog":
+elif page == "Health Blog":
     st.title("Health Blog")
     st.write("Read our latest articles on health and wellness. Stay informed with expert advice and tips for a healthier lifestyle.")
 
 # Client Interface Page
-elif page == "client_interface":
+elif page == "Client Interface":
     st.title("Client Interface")
     
     # Search for Doctors
@@ -137,7 +87,7 @@ elif page == "client_interface":
     # Here you would integrate actual notification management with backend
 
 # Admin Panel Page
-elif page == "admin_panel":
+elif page == "Admin Panel":
     st.title("Admin Panel")
     st.write("Welcome to the admin dashboard.")
     admin_action = st.selectbox("Select Action", [
@@ -161,7 +111,7 @@ elif page == "admin_panel":
         # Implement functionality to update content
 
 # Chatbot Page
-elif page == "chatbot":
+elif page == "Chatbot":
     st.title("Chatbot for Medication Suggestions")
     user_query = st.text_input("Ask the chatbot:")
     if user_query:
@@ -169,7 +119,7 @@ elif page == "chatbot":
         st.write(f"Chatbot: {response}")
 
 # New Doctor Profiles Page
-elif page == "new_doctor_profiles":
+elif page == "New Doctor Profiles":
     st.title("New Doctor Profiles")
     doctor_name = st.text_input("Doctor's Name")
     doctor_specialty = st.text_input("Specialty")
@@ -184,7 +134,7 @@ elif page == "new_doctor_profiles":
         # You would typically save this information to a database
 
 # Admin Management Page
-elif page == "admin_management":
+elif page == "Admin Management":
     st.title("Admin Management")
     st.write("Manage doctor profiles, monitor interactions, handle disputes, and ensure compliance.")
     st.write("This section is restricted to authorized admins.")
