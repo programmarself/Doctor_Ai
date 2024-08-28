@@ -24,7 +24,7 @@ page = st.sidebar.radio("Go to", [
 # Home Page
 if page == "Home":
     st.title("Welcome to HealthCare Center")
-    st.image("https://via.placeholder.com/800x400", use_column_width=True)
+    st.image("doctor.png", use_column_width=True)
     st.write("Providing the best healthcare services for you and your family.")
 
 # About Us Page
